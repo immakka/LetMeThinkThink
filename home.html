@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>買保險? LetMeThinkThink ..</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* 全域樣式 */
+body {
+  font-family: Microsoft YaHei, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+/* 頂部導航欄 */
+header {
+  background-color: #f4febc;
+  padding: 15px 5;
+  box-shadow: 0 9px 3px rgba(0, 0, 0, 0.1);
+  position: fixed; /* 固定在頂部 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* 確保在最上層 */
+  display: flex; /* 使用Flexbox */
+  justify-content: space-between; /* 左右對齊 */
+  align-items: center; /* 垂直置中 */
+}
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: color 0.3s ease; /* 顏色過渡效果 */
+}
+
+nav a:hover {
+  color: #d8e788; /* 滑鼠懸停時變色 */
+}
+
+/* 選單按鈕 */
+.menu-button {
+  background-color: #d8e788;
+  color: #23212a;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  display: none; /* 預設隱藏 */
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  overflow: hidden;
+  margin-top: 80px; /* 調整與導航欄的距離 */
+}
+
+.hero-slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.hero-slide {
+  min-width: 100%;
+  height: 400px; /* 設定圖片高度 */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #0a0a0a;
+}
+
+.hero-slide h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero-slide p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+}
+
+.hero-buttons a {
+  display: inline-block;
+  background-color: #d8e788;
+  color: #23212a;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+/* 左右箭頭 */
+.slider-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.slider-nav button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+/* 文章區塊 */
+.article {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 頁尾 */
+footer {
+  background-color: #33333330;
+  color: #0c0c0c;
+  text-align: center;
+  padding: 3px ;
+}
+
+/* 小螢幕上的樣式 */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  nav {
+    display: none; /* 預設隱藏導航選單 */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f4febc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-button {
+    display: block; /* 顯示選單按鈕 */
+  }
+
+  nav a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!--以下是Heading標題按鈕-->
+<header>
+  <div class="container">
+    <h1>LetMeThinkThink保險</h1> <!-- 網站標題 -->
+    <button class="menu-button" onclick="toggleMenu()">選單</button> <!-- 選單按鈕 -->
+    <nav>
+      <a href="#">👉首頁</a>
+      <a href="#">📞想說保險</a>
+      <a href="#">保險公司產品比較</a>
+      <a href="#">🔢計下數</a>
+      <a href="#">"🙂‍↔️我"</a>
+    </nav>
+  </div>
+</header>
+
+<!--以下是home page Banner-->
+<section class="hero">
+  <div class="hero-slider">
+    <div class="hero-slide" style="background-image: url('image1.jpg');">
+      <h2>其實買保險有agent好? 無agent好?</h2>
+      <div class="hero-buttons">
+        <a href="#">好 , 發生咩事都有人跟</a>
+        <a href="#">唔好 , Sell果樣依樣</a>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('image2.jpg');">
+      <h2>打算買份保險 , 開頭諗住買幾千蚊 <br> 講講下計到出黎幾萬蚊</h2>
+      <div class="hero-buttons">
+        <a href="#">都要買既 , 大病時可能賠唔起</a>
+        <a href="#">緊係唔買啦 , 何況我都未病過</a>
+      </div>
+    </div>
+  </div>
+  <div class="slider-nav">
+    <button onclick="prevSlide()">&#10094;</button>
+    <button onclick="nextSlide()">&#10095;</button>
+  </div>
+</section>
+
+<div class="container">
+  <section class="article">
+    <h2>我想籍住依個小小平台 , 寫出我對保險的認知</h2>
+    <p>對相信保險既人 , 我希望可以分享我既觀點比你。</p>
+    <p>對討厭保險既人 , 其實我無咩想講 , 可以關閉網頁。</p>
+    <p>對保險無感既人 , 我想你行前一步認識保險 , 希望你把保險成為自己終生有用的工具。</p>
+  </section>
+
+  <section class="article">
+    <h2>我無保險牌。我之所以講保險題目 , 因為我頗相信保險。</h2>
+    <p>當人面對大病毫無選擇無能為力的一刻 , </p>
+    <p>保險確實會比到一點安心感。</p>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2025.LetMeThinkThinkからお送りいたします。</p>
+</footer>
+
+<script>
+// 選單按鈕
+function toggleMenu() {
+  const nav = document.querySelector('nav');
+  nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
+}
+
+// 圖片輪播
+const slider = document.querySelector('.hero-slider');
+const slides = document.querySelectorAll('.hero-slide');
+let currentIndex = 0;
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  updateSlider();
+}
+
+function prevSlide() {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  updateSlider();
+}
+
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// 自動輪播 (可選)
+// setInterval(nextSlide, 5000);
+</script>
+
+</body>
+</html>
